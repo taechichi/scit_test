@@ -1,4 +1,4 @@
-package net.datasa.test.security;
+package net.datasa.ex_cashbook_prac.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -18,7 +18,7 @@ public class WebSecurityConfig {
     //로그인 없이 접근 가능 경로
     private static final String[] PUBLIC_URLS = {
             "/"                     //root
-            , "/images/**"          //이미지 경로
+            , "/img/**"          //이미지 경로
             , "/css/**"             //CSS파일들
             , "/js/**"              //JavaSCript 파일들
             , "/member/join"        //회원가입
@@ -37,7 +37,8 @@ public class WebSecurityConfig {
                         .usernameParameter("id")
                         .passwordParameter("password")
                         .loginProcessingUrl("/member/login")
-                        .defaultSuccessUrl("/", true)
+                        //.defaultSuccessUrl("/", true)
+                        .defaultSuccessUrl("/")
                         .permitAll()
                 )
                 .logout(logout -> logout

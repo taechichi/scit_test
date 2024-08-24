@@ -29,7 +29,18 @@ public class MemberController {
             @ModelAttribute MemberDTO dto
             ) {
         log.debug("join method called.");
-
+        log.debug("dto: {}", dto);
+        memberService.join(dto);
         return "redirect:/";
     }
+
+    // ============================
+    // ==== LOGIN ====
+    @GetMapping("loginForm")
+    public String LoginFormEnter() {
+        log.debug("loginFormEnter method called.");
+        return "loginForm";
+    }
+    // ==== LOGIN ====
+    // ============================
 }

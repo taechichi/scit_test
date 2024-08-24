@@ -37,8 +37,8 @@ public class WebSecurityConfig {
                         .usernameParameter("id")
                         .passwordParameter("password")
                         .loginProcessingUrl("/member/login")
-                        //.defaultSuccessUrl("/", true)
-                        .defaultSuccessUrl("/")
+                        .defaultSuccessUrl("/", true)
+                        //.defaultSuccessUrl("/")
                         .permitAll()
                 )
                 .logout(logout -> logout

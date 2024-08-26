@@ -2,6 +2,7 @@
 <html lang="ko"
       xmlns:th="http://www.thymeleaf.org"
       xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+    <!-- ** sec:쓸라면 이거 피료함 -->
 <head>
     <meta charset="UTF-8">
     <title>[ ex_cashbook_prac.html]</title>
@@ -14,10 +15,18 @@
 </head>
 <body>
     <h1> [ ex_cashbook_prac ] </h1>
-    <h3> [ FORMAT ] </h3>
+    <h3> [ HOME ] </h3>
     <hr>
 
+    <h1> [ CashBook ] </h1>
 
+    <div sec:authorize="not isAuthenticated()">
+        <div><a href="/member/join">Join Member</a></div>
+        <div><a href="/member/login">Login</a></div>
+    </div>
+
+    <div>
+    </div>
 
 </body>
 </html>

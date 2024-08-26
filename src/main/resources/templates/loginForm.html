@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title>[ ex_cashbook_prac.html]</title>
+    <script src="/js/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            //alert("jq_ready.");
+            $('#loginForm').submit(function () {
+                alert("loginForm");
+                if($('#id').val() == "" || $('#password') == "") {
+                    alert("Put ID or Password.");
+                    return false;
+                }
+                return true;
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1> [ ex_cashbook_prac ] </h1>
+    <h3> [ LoginForm ] </h3>
+    <hr>
+
+    <div>
+        <form id="loginForm" action="/member/login" method="post">
+            <table>
+                <tr>
+                    <td>ID: </td>
+                    <td><input type="text" name="id" id="id"></td>
+                </tr>
+                <tr>
+                    <td>PW: </td>
+                    <td><input type="password" name="password" id="password"></td>
+                </tr>
+            </table>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
+</body>
+</html>
